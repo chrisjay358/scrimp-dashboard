@@ -1,0 +1,7 @@
+.content {
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: [nav-start] 16fr [nav-end full-start]84fr [full-end aside-start] auto [aisde-end];
+  grid-template-rows: auto 1fr;
+}

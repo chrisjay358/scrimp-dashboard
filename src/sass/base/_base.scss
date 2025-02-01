@@ -1,0 +1,21 @@
+@use "../abstracts" as *;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media only screen and (max-width: 81em) {
+    font-size: 56%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+}

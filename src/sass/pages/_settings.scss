@@ -1,0 +1,66 @@
+@use "../abstracts" as *;
+
+.preview {
+  background: $color-white;
+  padding-block: 0.5rem 4rem;
+  overflow-y: auto;
+  height: 100%;
+
+  &__tabs-container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__content {
+    padding-inline: 2.5rem;
+  }
+
+  &__user {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__user-img {
+    width: 6vw;
+    height: 6vw;
+    background: $color-accent-shade-1;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__user-name {
+    font-size: 3rem;
+    color: $color-accent-tint;
+  }
+
+  &__none {
+    display: none;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  &__input {
+    background: #ededed;
+  }
+
+  &__button {
+    align-self: flex-end;
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.5rem 5rem;
+    border: none;
+    background: $color-accent-shade-1;
+    color: $color-accent-tint;
+    border-radius: $radius-default;
+
+    &--delete {
+      align-self: flex-start;
+    }
+  }
+}

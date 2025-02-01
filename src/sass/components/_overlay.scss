@@ -1,0 +1,303 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.5s;
+
+  &--receipt {
+    justify-content: flex-end;
+  }
+
+  &__fund,
+  &__card,
+  &__plan,
+  &__transfer,
+  &__transaction,
+  &__beneficiary {
+    position: absolute;
+    background: $color-white;
+    padding: 4rem 3rem;
+    padding-block-end: 3.5rem;
+    border-radius: 0.9rem;
+    box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    transition: all 0.5s;
+  }
+
+  &__transfer,
+  &__fund,
+  &__card--creation,
+  &__card--topup,
+  &__plan--update,
+  &__plan--withdrawal,
+  &__card--payment,
+  &__transaction--details,
+  &__beneficiary--confirm {
+    width: 40rem;
+  }
+
+  &__plan--creation {
+    min-width: 50rem;
+  }
+
+  &__plan--confirm {
+    width: 34.25rem;
+  }
+
+  &__transaction {
+    height: 100%;
+    transition: all 0.3s;
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+  }
+
+  &__form--add-funds .form__error-box,
+  &__plan--creation .form__error-box,
+  &__plan--update .form__error-box,
+  &__card--creation .form__error-box {
+    margin: 0;
+  }
+
+  &__creation--plan .form__error-box {
+    margin: 0;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+
+    &--transaction {
+      gap: 5rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__heading {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+  &__subheading {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  &__spinner {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__confirm-text {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  &__message {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  // Form
+  &__form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    &--card-payment,
+    &--transfer {
+      gap: 2.5rem;
+    }
+
+    &--plan {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    &--name {
+      margin-block-end: 1.7rem;
+    }
+
+    &--amount {
+      margin-block-end: 2.5rem;
+    }
+
+    &--color {
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  &__form-label {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  &__form-input,
+  &__form-select {
+    padding: 1rem 1.3rem;
+    border-radius: 0.7rem;
+    border: 1.5px solid $color-grey-dark-2;
+    font-family: inherit;
+    flex-grow: 1;
+    color: inherit;
+    transition: all 0.3s;
+
+    &::placeholder {
+      font-size: 1.5rem;
+      color: $color-grey-dark-4;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.6rem $color-primary-tint;
+      border-color: transparent;
+    }
+
+    &--transfer {
+      background: #ddd;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: $color-grey-dark-3;
+    }
+  }
+
+  &__form-select {
+    flex-basis: 50%;
+  }
+
+  &__btn-group {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // Buttons
+  &__btn-close {
+    align-self: flex-end;
+    position: absolute;
+    cursor: pointer;
+    inset-block-start: 2.2rem;
+    inset-inline-end: 6%;
+    font-size: 3rem;
+    font-family: inherit;
+    font-weight: 600;
+    color: inherit;
+    background: none;
+    border: none;
+    line-height: 0;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__btn-send {
+    color: #eaf3fc;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    background: #164271;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1.3rem 2rem;
+    transition: all 0.3s;
+
+    &:hover {
+      background: color.scale($color-accent-shade-1, $lightness: 10%);
+      box-shadow: 0 1.3rem 2rem rgba($color-black, 0.3);
+    }
+
+    &:focus {
+      box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__btn-form,
+  &__btn-form:link {
+    cursor: pointer;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    color: $color-accent-tint;
+    background: $color-accent-shade;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1.3rem 3rem;
+    transition: all 0.3s;
+
+    &:hover {
+      background: color.scale($color-accent-shade-1, $lightness: 10%);
+      box-shadow: 0 1.3rem 2rem rgba($color-black, 0.3);
+    }
+
+    &:focus {
+      box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    &--next {
+      margin-inline-start: auto;
+    }
+
+    &--create {
+      align-self: end;
+    }
+  }
+}
+
+.hidden {
+  /* 1) Hide it visually */
+  opacity: 0;
+
+  /* 2) Make it unaccessible to mouse and keyboard */
+  pointer-events: none;
+
+  /* 3) Hide it from screen readers */
+  visibility: hidden;
+
+  &--move {
+    transform: translateX(100);
+  }
+}
+
+.no-show {
+  /* 1) Hide it visually */
+  opacity: 0;
+
+  /* 2) Make it unaccessible to mouse and keyboard */
+  pointer-events: none;
+
+  /* 3) Hide it from screen readers */
+  visibility: hidden;
+
+  transform: translateX(100);
+}

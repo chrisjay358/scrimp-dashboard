@@ -1,0 +1,30 @@
+@use "../base";
+
+.signup {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  height: 100vh;
+  padding: 2rem;
+
+  &__text-box {
+    background: linear-gradient(rgba(180, 47, 47, 0.238), rgba(0, 0, 0, 0.644)),
+      url(../img/login.webp);
+
+    background-position: center;
+    background-size: cover;
+    border-radius: 1rem;
+  }
+
+  &__form-box {
+    display: grid;
+    grid-template-columns: 70%;
+    place-content: center;
+
+    animation: moveInLeft 2s ease-in-out;
+  }
+
+  &__form {
+    display: flex;
+    gap: 2.5rem;
+  }
+}

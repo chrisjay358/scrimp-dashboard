@@ -1,0 +1,94 @@
+@use "../abstracts" as *;
+
+.exchange {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .form__error-box {
+    margin: 0;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__type {
+    padding: 0.3rem;
+    font-family: inherit;
+    border-radius: 0.3rem;
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.5rem rgba($color-primary, 0.353);
+      border-color: transparent;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &-group {
+      overflow: hidden;
+
+      display: flex;
+      flex: 1;
+      gap: 0.5rem 1rem;
+
+      & > * {
+        border: none;
+        border-block-end: 0.3rem solid #333;
+        font-family: inherit;
+        color: inherit;
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.2rem;
+        transition: all 0.3s;
+
+        &:focus {
+          outline: 0;
+          border-block-end: 0.3rem solid rgba($color-primary, 0.932);
+        }
+      }
+    }
+  }
+
+  &__currency {
+    &-amount {
+      flex: 1;
+
+      &--new {
+        border-color: $color-grey-light-1;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__rate {
+    font-size: 1.38rem;
+    font-weight: 600;
+    color: $color-grey-dark-3;
+  }
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  background: $color-accent-shade-1;
+
+  color: $color-accent-tint;
+  font-size: 1.3rem;
+  padding: 1rem 2rem;
+  border-radius: 0.3rem;
+}

@@ -1,0 +1,137 @@
+@use "../abstracts" as *;
+
+.plan {
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+  }
+
+  &__item {
+    padding: 1rem 2rem;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:nth-child(odd) {
+      background-color: #f8f9fa;
+    }
+
+    &:nth-child(even) {
+      background: #e9e9e9;
+    }
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  &__item-content {
+    display: grid;
+    grid-template-columns: min-content minmax(min-content, 16rem) 10rem 1fr auto;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  &__icon {
+    padding: 0.5rem;
+    background: rgba(255, 0, 0, 0.244);
+    background: $color-primary-tint;
+    border-radius: 100%;
+    fill: $color-primary;
+
+    &--small {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+
+    &--big {
+      width: 6.2rem;
+      height: 6.2rem;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  &__name {
+    font-size: 1.45rem;
+    font-weight: 700;
+  }
+
+  &__subscription {
+    font-size: 1.15rem;
+    &--cycle {
+      letter-spacing: 0.7px;
+      color: $color-grey-dark-5;
+    }
+    &--amount {
+      color: $color-grey-dark-3;
+    }
+  }
+
+  &__price {
+    font-size: 1.45rem;
+    &--current {
+      font-weight: 700;
+      color: $color-grey-dark-1;
+    }
+    &--total {
+      color: $color-grey-dark-4;
+    }
+  }
+
+  &__progress-container {
+    display: flex;
+    align-items: center;
+    gap: 1.35rem;
+
+    &--detail {
+      align-items: flex-end;
+    }
+  }
+
+  &__progress-bar {
+    flex: 1;
+    height: 0.6rem;
+    background: $color-grey-dark-3;
+    border-radius: $radius-small;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+
+    &--range {
+      background: $color-primary;
+      height: 100%;
+    }
+  }
+
+  &__progress-percent {
+    font-size: 1.6rem;
+    color: $color-primary;
+    font-weight: 700;
+  }
+
+  &__upcoming {
+    font-size: 1.2rem;
+    font-weight: 500;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &--text {
+      color: $color-grey-dark-3;
+    }
+
+    &--date {
+      color: $color-grey-dark-1;
+      font-weight: 600;
+    }
+  }
+}

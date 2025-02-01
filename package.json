@@ -1,0 +1,29 @@
+{
+  "name": "scrimpy-dashboard",
+  "version": "1.0.0",
+  "description": "A financial management system",
+  "source": [
+    "src/index.html",
+    "src/dashboard.html"
+  ],
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel ",
+    "build": "parcel build "
+  },
+  "author": "Chris",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
+    "buffer": "^6.0.3",
+    "events": "^3.3.0",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10",
+    "sass": "^1.77.6",
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.5"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.4"
+  }
+}

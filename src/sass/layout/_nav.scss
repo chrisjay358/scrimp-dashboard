@@ -1,0 +1,99 @@
+@use "../abstracts" as *;
+@use "sass:color";
+
+.nav {
+  grid-row: 1/-1;
+  padding-block: 2.5rem 1rem;
+  background: $color-primary-tint-1;
+
+  display: flex;
+  flex-direction: column;
+
+  &__logo {
+    display: inline-block;
+    padding-inline: 4rem;
+    padding-block-end: 2rem;
+    font-size: 3rem;
+    color: $color-primary;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  &__list {
+    list-style: none;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    &-item:nth-child(7) {
+      margin-top: auto;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 1.5rem;
+      text-decoration: none;
+      padding: 1.5rem 4rem;
+      color: $color-grey-dark-1;
+      transition: all 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      inset: 0 0;
+      height: 100%;
+      width: 0;
+      transition: all 0.3s;
+      z-index: -1;
+    }
+
+    &:hover,
+    &--active:link,
+    &--active:visited {
+      font-weight: 00;
+      color: #f3eafc;
+
+      &::before {
+        background: #7c27cb;
+        width: 100%;
+      }
+    }
+  }
+
+  &__icon {
+    fill: currentColor;
+    height: 3rem;
+    width: 3rem;
+    transition: all 0.25s;
+  }
+
+  &__log-out {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    border: none;
+    cursor: pointer;
+    padding: 2rem 4rem;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1.65rem;
+    color: $color-primary-tone;
+    background: none;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

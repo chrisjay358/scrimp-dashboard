@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Sign up to quickly create a new Scrimp account."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sass/main.scss" />
+
+    <script type="module" defer src="js/controller.js"></script>
+    <title>Sign Up and Create a Scrimp Account</title>
+  </head>
+  <body>
+    <main class="signup">
+      <div class="signup__form-box">
+        <h2 class="form__heading">Create Your Account</h2>
+        <p class="form__text">
+          Enter your details below to create your account and get started
+        </p>
+        <form class="form signup__form">
+          <div class="form__groups">
+            <div class="form__group">
+              <label for="firstname" class="form__label">First Name</label>
+              <input
+                type="text"
+                name="firstname"
+                id="first-name"
+                class="form__input"
+                placeholder="Enter your first name"
+                required
+              />
+            </div>
+            <div class="form__group">
+              <label for="lastname" class="form__label">Last Name</label>
+              <input
+                type="text"
+                name="lastname"
+                id="lasr-name"
+                class="form__input"
+                placeholder="Enter your last name"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form__groups">
+            <div class="form__group form__group--username">
+              <label for="username" class="form__label">Username</label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                class="form__input form__input--username"
+                placeholder="Enter a username"
+                autocomplete="username"
+                required
+              />
+            </div>
+            <div class="form__group">
+              <label for="phone-number" class="form__label">Phone number</label>
+              <input
+                type="number"
+                name="phone-number"
+                id="phone-number"
+                class="form__input"
+                placeholder="Enter your phone number"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form__group form__group--email">
+            <label for="email" class="form__label">Email Address</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="form__input form__input--email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div class="form__group">
+            <label for="password" class="form__label">Passowrd</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form__input form__input--password"
+              placeholder="Passowrd"
+              autocomplete="new-password"
+              required
+            />
+            <div class="form__password-requirements">
+              <span class="form__password-requirement">Password must:</span>
+              <span
+                class="form__password-requirement form__password-requirement--characters"
+                >Be at least 8 characters</span
+              >
+              <span
+                class="form__password-requirement form__password-requirement--number"
+                >Contain a number</span
+              >
+            </div>
+          </div>
+
+          <div class="form__group form__group--confirm">
+            <label for="confirm-password" class="form__label"
+              >Confirm Passowrd</label
+            >
+            <input
+              type="password"
+              name="confirm-password"
+              id="confrim-password"
+              class="form__input form__input--confirm"
+              placeholder="Confirm Passowrd"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+
+          <button class="form__button form__button--login">Sign up</button>
+          <span class="form__signup"
+            >Already have an account?
+            <a
+              href="index.html"
+              class="form__link form__link--signup signup-link"
+              >Sign in</a
+            >
+          </span>
+        </form>
+      </div>
+      <div class="signup__text-box"></div>
+    </main>
+  </body>
+</html>

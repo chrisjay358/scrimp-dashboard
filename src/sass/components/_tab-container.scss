@@ -1,0 +1,50 @@
+@use "../abstracts" as *;
+
+.tab {
+  &__container {
+    display: flex;
+    border-block-end: 0.1rem solid $color-grey-dark-4;
+
+    &--plan {
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 1rem;
+    }
+  }
+
+  &__content {
+    cursor: pointer;
+    background: none;
+    flex: 1;
+    display: inline-block;
+    font-weight: 500;
+    font-family: inherit;
+    border: none;
+    color: $color-grey-dark-3;
+    font-weight: 600;
+    border-bottom: 0.2rem solid transparent;
+    transition: all 0.3s;
+
+    &--overview {
+      padding: 1.5rem;
+    }
+
+    &--plan {
+      padding: 0.5rem 1.5rem 1.5rem;
+    }
+
+    &--preview {
+      padding: 1.5rem 1.5rem;
+    }
+
+    &:hover {
+      color: $color-accent-shade;
+    }
+  }
+
+  &--active {
+    border-color: $color-primary;
+    color: $color-primary-tone;
+    font-weight: 600;
+  }
+}

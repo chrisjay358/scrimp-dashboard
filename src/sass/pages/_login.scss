@@ -1,0 +1,40 @@
+@use "../base";
+
+.login {
+  padding: 2rem;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+
+  &__text-box {
+    background: linear-gradient(rgba(0, 0, 0, 0.238), rgba(0, 0, 0, 0.644)),
+      url(../img/login.webp);
+    background-size: cover;
+
+    background-position: center;
+    border-radius: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    & > * {
+      display: none;
+    }
+  }
+
+  &__form-box {
+    display: grid;
+    grid-template-columns: 60%;
+    grid-template-rows: min-content min-content;
+    place-content: center;
+
+    animation: moveInRight 2s ease-in-out;
+  }
+
+  &__form {
+    display: flex;
+    gap: 3rem;
+  }
+}

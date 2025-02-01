@@ -1,0 +1,35 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+.form {
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      color: $color-primary;
+      font-size: 1.5rem;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: all 0.3s;
+    }
+
+    &:hover,
+    &:active {
+      color: color.scale($color-primary, $lightness: -30%);
+      border-bottom: 1px solid color.scale($color-primary, $lightness: -30%);
+      text-shadow: 0 1.3rem 2rem rgba($color-black, 0.3);
+      font-weight: 600;
+    }
+
+    &--forget-password {
+      &:link,
+      &:visited {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  &__signup {
+    font-size: 1.4rem;
+  }
+}

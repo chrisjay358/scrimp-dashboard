@@ -1,0 +1,62 @@
+@use "../abstracts" as *;
+
+.details {
+  align-self: center;
+  padding: 3rem;
+  background: $color-primary-tint-1;
+  border: 0.15rem solid $color-primary-tone;
+  border-radius: $radius-default;
+  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.3);
+
+  width: 22vw;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__header {
+    font-size: 1.4rem;
+  }
+
+  &__list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-block-end: 0.5rem;
+    border-block-end: 0.1rem solid $color-grey-light-1;
+  }
+
+  &__title {
+    font-size: 1.55rem;
+  }
+
+  &__text {
+    font-size: 1.3rem;
+  }
+
+  // Close button
+  &__btn-close {
+    background: none;
+    font-size: 2rem;
+    border: none;
+    position: absolute;
+    inset-inline-end: 1.2rem;
+    inset-block-start: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $color-primary;
+      scale: 1.5;
+    }
+  }
+}

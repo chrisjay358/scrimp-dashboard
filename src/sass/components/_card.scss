@@ -1,0 +1,82 @@
+@use "../abstracts" as *;
+
+.card {
+
+  background: #81946f;
+
+  border-radius: $radius-default;
+  padding: 1.5rem;
+  font-size: 1.4rem;
+  box-shadow: 0 1rem 3.2rem -0.5rem rgba(#81946f, 0.7);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+
+  &--home {
+    gap: 1.5rem;
+
+    .card__body {
+      font-size: clamp(1vw, 1rem, 1.5rem);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__type {
+    color: brown;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__balance {
+    font-size: 2rem;
+    font-size: 1.13vw;
+    font-weight: 800;
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__number {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 900;
+  }
+
+  &__holder-name {
+    font-weight: 500;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  &__icon {
+    height: 3rem;
+    width: 3rem;
+    fill: red;
+  }
+
+  &--overlay {
+    height: 18vh;
+  }
+}

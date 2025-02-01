@@ -1,0 +1,46 @@
+@use "../abstracts" as *;
+.main {
+  background: $color-grey-light;
+
+  grid-column: 2;
+  overflow: hidden;
+
+  &--dashboard {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: min-content minmax(auto, 20vw) 1fr;
+    gap: 3rem;
+    align-items: stretch;
+  }
+
+  &--account {
+    padding: 2rem;
+  }
+
+  &--card {
+    display: grid;
+    grid-template-columns: 30fr 70fr;
+  }
+
+  &--transfer {
+    padding: 2rem;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: stretch;
+    justify-items: center;
+  }
+
+  &--transaction {
+    padding: 2rem;
+  }
+
+  &--plan {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr;
+    gap: 2rem;
+
+    padding: 1rem 2rem;
+  }
+}

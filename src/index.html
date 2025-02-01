@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Sign in to the Scrimp Dashboard to manage finances and operations in your account. Manage your funds and much more."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sass/main.scss" />
+    <script type="module" defer src="js/controller.js"></script>
+    <title>Scrimp Login | Sign in to the Scrimp Dashboard</title>
+  </head>
+  <body>
+    <main class="login">
+      <div class="login__text-box">
+        <h1 class="login__heading">Scrimp your finances</h1>
+        <p class="login__description">
+          Our system offers a great all in one app
+        </p>
+      </div>
+      <div class="login__form-box">
+        <h2 class="form__heading">Welcome Back 🙂</h2>
+        <p class="form__text">Enter your details to login</p>
+
+        <form class="form login__form">
+          <div class="form__group">
+            <label for="login" class="form__label">Username or Email</label>
+            <input
+              type="text"
+              name="login"
+              id="username"
+              class="form__input form__input--username"
+              placeholder="Enter email or username"
+              autocomplete="username"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <label for="password" class="form__label">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form__input form__input--password"
+              placeholder="Passowrd"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+
+          <a href="#" class="form__link form__link--forget-password"
+            >Forgot Passowrd?</a
+          >
+
+          <button class="form__button form__button--login">Sign in</button>
+          <span class="form__signup"
+            >Don't have an account?
+            <a href="signup.html" class="form__link form__link--signup"
+              >Sign up</a
+            ></span
+          >
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

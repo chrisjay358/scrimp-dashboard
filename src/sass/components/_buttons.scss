@@ -1,0 +1,73 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+.form__button {
+  display: inline-block;
+  background: $color-primary-button;
+
+  background: $color-primary;
+  color: $color-primary-tint-1;
+  color: $color-white;
+  border-radius: $radius-default;
+
+  font-size: 2rem;
+  font-weight: 700;
+  border: none;
+  padding: 1.5rem 3rem;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background: color.scale($color-primary, $lightness: -30%);
+
+    box-shadow: 0 1.3rem 2rem rgba($color-black, 0.3);
+  }
+
+  &:focus {
+    box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.2);
+  }
+}
+
+.btn-menu {
+  position: relative;
+
+  &:hover .menu__list {
+    visibility: visible;
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+
+.menu {
+  &__list {
+    position: absolute;
+    top: -0.06rem;
+    left: -67%;
+    transform: translateX(-68%);
+    transition: all 0.3s;
+    border-radius: 0.7rem;
+    overflow: hidden;
+    width: max-content;
+    list-style: none;
+    visibility: none;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &__item {
+    background: $color-accent-shade-1;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 500;
+    transition: all 0.3s;
+
+    &:not(:last-child) {
+      border-bottom: 0.1rem solid $color-grey-dark-5;
+    }
+
+    &:hover {
+      font-size: 1.4rem;
+      background: $color-accent-shade;
+    }
+  }
+}

@@ -1,0 +1,258 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+.showcase {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-block: 2rem;
+  overflow: hidden;
+
+  &__container {
+    border-block: 0.1rem solid #999;
+  }
+
+  &__holder {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding-block-start: 1.5rem;
+    padding-inline-start: 3rem;
+    transition: all 0.3s;
+
+    &--active {
+      background: rgba(#808a78, 0.12);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &--inactive {
+      background: rgba(#8a7878, 0.12);
+    }
+
+    &:not(:last-child) {
+      border-block-end: 0.15rem solid #bababa;
+    }
+  }
+
+  &__textbox {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__title {
+    &--inactive {
+      color: $color-grey-dark-4;
+    }
+
+    &--active {
+      font-weight: 600;
+    }
+  }
+
+  &__status {
+    display: flex;
+    gap: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 100%;
+    }
+
+    &--active::before {
+      background: green;
+    }
+
+    &--inactive {
+      color: $color-grey-dark-4;
+
+      &::before {
+        background: #94706f;
+      }
+    }
+  }
+
+  &__card {
+    justify-self: end;
+
+    background: #c8c8c8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 1rem;
+    border: 0.1rem solid #bababa;
+    width: 6.5rem;
+    height: 6.5rem;
+    position: relative;
+    top: 0.1rem;
+    transition: all 0.3s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 1.3rem;
+      width: 100%;
+      background: #eee;
+      inset-block-start: 20%;
+    }
+  }
+
+  &__digit {
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    margin-block-start: 1rem;
+  }
+
+  &__holder--active:hover,
+  &--active {
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.162);
+    background: $color-accent-tint;
+    background: rgba(#808a78, 0.52);
+  }
+
+  &__holder--active:hover &__card,
+  &--active &__card {
+    width: 9rem;
+  }
+
+  &__holder:hover &__card--shopping {
+    width: 9rem;
+    background: #4f881a;
+  }
+
+  &__holder:hover &__card--subscription {
+    width: 9rem;
+    background: #881c1a;
+  }
+
+  &__create-btn {
+    background: none;
+    cursor: pointer;
+    color: $color-accent-shade;
+    border: none;
+    width: 100%;
+    font-weight: 500;
+    padding: 1.2rem 1rem;
+    font-size: 1.5rem;
+    border: 0.2rem dashed $color-accent-shade;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: $color-primary-tone;
+      color: $color-primary-tone;
+      font-weight: 500;
+    }
+  }
+}
+
+// Content
+.overview {
+  background: $color-white;
+  grid-column: 2;
+  padding-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  overflow: hidden;
+  position: relative;
+
+  &__text {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-block-start: 10rem;
+  }
+
+  &__content {
+    padding: 3rem;
+    padding-inline-end: 1rem;
+    overflow: hidden;
+  }
+
+  &__display {
+    align-self: center;
+    width: 20vw;
+    display: grid;
+  }
+
+  &__tab-container {
+    display: flex;
+    border-block-end: 0.1rem solid $color-grey-dark-4;
+  }
+
+  // Form
+  &__form {
+    width: 50%;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  &__form-input--status {
+    align-self: flex-start;
+
+    height: 3rem;
+    padding: calc(3rem / 10);
+    box-sizing: content-box;
+    aspect-ratio: 2;
+    border-radius: 3rem;
+    background: radial-gradient(farthest-side, #fff 97%, #0000) left/3rem 100%
+        content-box no-repeat,
+      grey;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:checked {
+      background-position: right;
+      background-color: green;
+    }
+  }
+
+  // Button
+  &__btn-payment {
+    position: absolute;
+    inset-inline-end: 1vw;
+    cursor: pointer;
+    display: inline-block;
+    padding: 1rem 1.2rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: $color-accent-shade;
+    color: $color-accent-tint;
+    font-size: 1.2rem;
+
+    &:hover {
+      background: color.scale($color-accent-shade, $lightness: 5%);
+      box-shadow: 0 0.3rem 2rem rgba($color-black, 0.3);
+    }
+  }
+
+  &__form-btn {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    border-radius: 0.9rem;
+    border: none;
+    background: $color-accent-shade;
+    color: $color-accent-tint;
+    font-size: 1.4rem;
+
+    &:hover {
+      background: color.scale($color-accent-shade, $lightness: 5%);
+      box-shadow: 0 0.3rem 2rem rgba($color-black, 0.3);
+    }
+  }
+}

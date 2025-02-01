@@ -1,0 +1,77 @@
+@use "../abstracts" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: $color-grey-dark;
+  line-height: $line-default;
+}
+
+.login {
+  &__heading {
+    font-weight: 700;
+    font-size: 4rem;
+    color: whitesmoke;
+  }
+
+  &__description {
+    color: whitesmoke;
+  }
+}
+
+.form {
+  &__heading {
+    font-weight: 700;
+    font-size: 3rem;
+    margin-block-end: 1.5rem;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    margin-bottom: 3.4rem;
+  }
+
+  &__error-text {
+    font-size: 1.5rem;
+    color: rgb(208, 4, 4);
+    line-height: 1.6;
+  }
+
+  &__success-text {
+    font-size: 1.5rem;
+    color: #006241;
+  }
+}
+
+.header {
+  &-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+
+  &-subtitle {
+    font-size: 1.7rem;
+    font-weight: 700;
+  }
+}
+
+.error {
+  &__message {
+    font-size: 1.15rem;
+    color: rgb(208, 4, 4);
+    font-weight: 600;
+  }
+}
+
+.empty-transaction {
+  font-size: 2rem;
+  text-align: center;
+  padding-block-start: 5rem;
+}
+
+.empty-recipient {
+  font-size: 1.5rem;
+  font-weight: 600;
+}

@@ -1,0 +1,61 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+.table {
+  width: 100%;
+  text-align: left;
+  font-size: 1.5rem;
+  border-collapse: collapse;
+
+  &__row {
+    &:nth-child(odd) {
+      background-color: #f8f9fa;
+    }
+
+    &:nth-child(even) {
+      background-color: #dfdfdf;
+    }
+  }
+
+  &__heading {
+    padding: 1.5rem;
+    background: #8556b1;
+    color: $color-primary-tint-1;
+  }
+
+  &__body &__row:hover {
+    cursor: pointer;
+  }
+
+  &__data {
+    padding: 1.5rem 1rem;
+    font-size: 1.3rem;
+  }
+
+  &__data-status {
+    padding: 0.7rem 1rem;
+    font-size: 1.15rem;
+    font-weight: 500;
+    border-radius: 10rem;
+
+    &--success {
+      background: color.scale(#4bc0c0, $lightness: 55%);
+      color: color.scale(#4bc0c0, $lightness: -50%);
+    }
+
+    &--pending {
+      background: color.scale(#ffcd56, $lightness: 55%);
+      color: color.scale(#ffcd56, $lightness: -50%);
+    }
+
+    &--failed {
+      background: color.scale(#ff6384, $lightness: 55%);
+      color: color.scale(#ff6384, $lightness: -50%);
+    }
+
+    &--canceled {
+      background: color.scale(#ff9f40, $lightness: 55%);
+      color: color.scale(#ff9f40, $lightness: -50%);
+    }
+  }
+}

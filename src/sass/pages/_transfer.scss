@@ -1,0 +1,82 @@
+@use "../abstracts" as *;
+
+.transfer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: $color-white;
+  border-radius: $radius-default;
+  gap: 2.5rem;
+  width: 25vw;
+
+  .form__error-box {
+    margin: 0;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  &__label {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  &__input,
+  &__card,
+  &__description {
+    border-radius: $radius-default;
+    border: 1.5px solid $color-grey-dark-2;
+    font-family: inherit;
+    color: inherit;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  &__card {
+    &:focus {
+      outline: none;
+      border-color: transparent;
+      box-shadow: 0 0 0 0.5rem #8a2be25a;
+    }
+  }
+
+  &__input {
+    &::placeholder {
+      font-size: 1.5rem;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: transparent;
+      box-shadow: 0 0 0 0.5rem #8a2be25a;
+    }
+  }
+
+  &__description {
+    resize: none;
+
+    &:focus {
+      outline: none;
+      border-color: transparent;
+      box-shadow: 0 0 0 0.5rem #8a2be25a;
+    }
+  }
+
+  &__btn {
+    border: none;
+    cursor: pointer;
+    background: $color-accent-shade-1;
+    border-radius: $radius-small;
+    color: $color-accent-tint;
+    padding: 1rem;
+  }
+}
